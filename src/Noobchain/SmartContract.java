@@ -13,7 +13,7 @@ public class SmartContract {
 	private final float betMoney = 100.0f;
 	private Transaction transaction;
 	private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-	private static LocalDateTime now = LocalDateTime.now().plusMinutes(5);  
+	private static LocalDateTime now = LocalDateTime.now().plusMinutes(1);  
 	public static String time = dtf.format(now);
 	public SmartContract() {
 		execute();
@@ -56,10 +56,10 @@ public class SmartContract {
                 	int tmp3 = 0;
                 	while(true) {
                     try {
-                        sleep(30000);
+                        sleep(100000);
                         Random r = new Random();
                         lucky = r.nextInt((int)1e9)%5;
-                        System.out.printf("Con số may mắn là : %d", lucky);
+                        System.out.printf("\nCon số may mắn là : %d", lucky);
                         count = 0;
                         float reward = 0;
                         Set< Map.Entry< Wallet,List<Integer>> > st = listWalletJoin.entrySet();    
@@ -89,7 +89,7 @@ public class SmartContract {
              	     if(count > 0) {
              	    	 listWalletJoin.clear();
              	     }
-             	     System.out.printf("Có %d người chiến thắng", count);
+             	     System.out.printf("\n Có %d người chiến thắng", count);
                         
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
