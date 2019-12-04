@@ -8,7 +8,7 @@ package Application;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import Noobchain.NoobCoin;
+import Noobchain.*;
 
 /**
  *
@@ -21,13 +21,11 @@ public class showBlock extends javax.swing.JFrame {
      */
     public showBlock() {
         initComponents();
-        	reload();
         
     }
     
-    public void reload(){
-    	String tmp = NoobCoin.blockchain.toString();
-        BlockChain.setText(tmp);
+    public static void reload(String tmp){
+    	BlockChain.setText(BlockChain.getText()+tmp);
     }
     
     
@@ -52,6 +50,7 @@ public class showBlock extends javax.swing.JFrame {
         BlockChain.setColumns(20);
         BlockChain.setRows(5);
         jScrollPane2.setViewportView(BlockChain);
+        BlockChain.setText("");
 
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(15, 89, 637, 304);
@@ -65,7 +64,7 @@ public class showBlock extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JTextArea BlockChain;
+    public static javax.swing.JTextArea BlockChain = new javax.swing.JTextArea();;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration                   

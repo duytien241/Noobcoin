@@ -130,7 +130,7 @@ public class GiaoDienkhach extends javax.swing.JFrame {
         xemblock.setBounds(20, 110, 130, 30);
         xemblock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showBlock shB = new showBlock();
+    
                 shB.setSize(700,450);
                 shB.setVisible(true);
                 shB.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -155,7 +155,8 @@ public class GiaoDienkhach extends javax.swing.JFrame {
 		nv.setSize(580,473);
 		nv.setVisible(true);
     }
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify        
+    public static showBlock shB = new showBlock();
     private javax.swing.JPanel chucnang;
     private javax.swing.JButton dangky;
     private javax.swing.JButton dangnhap;

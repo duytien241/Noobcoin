@@ -10,6 +10,8 @@ import static org.bouncycastle.crypto.tls.CipherType.block;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+import Application.GiaoDienkhach;
+import Application.showBlock;
 import Noobchain.Block;
 
 public class NoobCoin {
@@ -171,6 +173,8 @@ public class NoobCoin {
 	public static void addBlock(Block newBlock) {
 		newBlock.mineBlock(difficulty);
 		blockchain.add(newBlock);
+		GiaoDienkhach.shB.reload(StringUtil.getJson(newBlock));
+		System.out.println(StringUtil.getJson(newBlock));
 	}
 }
 
