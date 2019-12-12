@@ -124,7 +124,7 @@ public class GiaoDienNguoiDung extends javax.swing.JFrame {
         laysodu.setBounds(0, 60, 130, 30);
         laysodu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	System.out.println("\nWalletA's balance is: " + user.getBalance());
+            	System.out.println("\nWallet's balance is: " + user.getBalance());
             	remove(chucnang);
 			    chucnang = new sodu(user);
 			    chucnang.setBounds(150, 60, 440, 340);

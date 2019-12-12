@@ -16,16 +16,12 @@ public class SmartContract {
 	private static LocalDateTime now = LocalDateTime.now().plusMinutes(1);  
 	public static String time = dtf.format(now);
 	public SmartContract() {
-		execute();
+		checkResult();
 	}
 	
         /*
         Start smartcontract
         */
-        public void start() {
-        	checkResult();
-        }
-        
     public void addUser(Wallet w, int so) {
        transaction = w.sendFunds(NoobCoin.walletAdmin.publicKey, betMoney);
        if(transaction == null ) {
@@ -44,19 +40,15 @@ public class SmartContract {
     	   listWalletJoin.get(w).add(so);
        }
         }
-	public void execute() {
-		checkResult();
-	}
 	
 	private void checkResult() {
 		final Thread checkResult;
             checkResult = new Thread() {
                 @Override
                 public void run() {
-                	int tmp3 = 0;
                 	while(true) {
                     try {
-                        sleep(100000);
+                        sleep(60000);
                         Random r = new Random();
                         lucky = r.nextInt((int)1e9)%5;
                         System.out.printf("\nCon số may mắn là : %d", lucky);
@@ -89,8 +81,12 @@ public class SmartContract {
              	     if(count > 0) {
              	    	 listWalletJoin.clear();
              	     }
-             	     System.out.printf("\n Có %d người chiến thắng", count);
-                        
+             	     System.out.printf("\nCó %d người chiến thắng", count);
+             	    now = LocalDateTime.now().plusMinutes(1);
+             	   time = dtf.format(now);
+             	   Application.datso.thoigian.setText(time.toString());
+             	   Application.datso.lastlucky.setText(""+lucky);
+             	   Application.datso.lastluckycount.setText(""+count);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();

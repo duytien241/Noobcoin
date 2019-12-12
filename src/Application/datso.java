@@ -110,10 +110,10 @@ public class datso extends javax.swing.JPanel {
         lastlucky.setBounds(250, 60, 59, 20);
         xacnhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	System.out.print(so.getText());
             	NoobCoin.smc.addUser(user, Integer.parseInt(so.getText()));
             	NoobCoin.smc.listWalletJoin.forEach((keyInt, valueInt) -> System.out.println(
             	        "Key = " + keyInt + ", value = " + valueInt));
+            	tongiaithuong.setText(""+NoobCoin.walletAdmin.getBalance());
             }
         });
     }// </editor-fold>                        
@@ -127,10 +127,10 @@ public class datso extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField lastlucky;
-    private javax.swing.JTextField lastluckycount;
+    public static javax.swing.JTextField lastlucky;
+    public static javax.swing.JTextField lastluckycount;
     private javax.swing.JTextField so;
-    private javax.swing.JTextField thoigian;
+    public static javax.swing.JTextField thoigian;
     private javax.swing.JButton xacnhan;
     private javax.swing.JTextField tongiaithuong;
     // End of variables declaration                   
